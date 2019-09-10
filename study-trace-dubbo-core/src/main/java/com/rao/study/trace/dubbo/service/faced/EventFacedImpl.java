@@ -5,6 +5,7 @@ import com.rao.study.trace.dubbo.dto.EventDto;
 import com.rao.study.trace.dubbo.entity.Event;
 import com.rao.study.trace.dubbo.service.IEventFaced;
 import com.rao.study.trace.dubbo.service.IEventService;
+import com.rao.study.trace.utils.LocalEvent;
 import com.rao.study.trace.utils.ThreadLocalUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,12 +20,13 @@ public class EventFacedImpl implements IEventFaced {
     private IEventService iEventService;
 
     @Override
-    public void save(EventDto eventDto) {
-        Long eventId = ThreadLocalUtils.get();
+    public void update(EventDto eventDto) {
+        LocalEvent localEvent = ThreadLocalUtils.get();
         Event event = new Event();
+        event.setId(eventDto.getId());
         event.setName(eventDto.getName());
         event.setType(eventDto.getType());
         event.setTime(LocalDateTime.now());
-        iEventService.save(event);
+        iEventService.updateById(event);
     }
 }
