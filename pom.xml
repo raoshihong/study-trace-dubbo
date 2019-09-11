@@ -52,6 +52,12 @@
 
             <dependency>
                 <groupId>com.rao.study</groupId>
+                <artifactId>study-trace-business-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.rao.study</groupId>
                 <artifactId>study-trace-lib</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
