@@ -19,6 +19,11 @@
 
         <dependency>
             <groupId>com.rao.study</groupId>
+            <artifactId>study-trace-business-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.rao.study</groupId>
             <artifactId>study-trace-lib</artifactId>
         </dependency>
 
