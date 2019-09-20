@@ -15,7 +15,7 @@ public class AgentController {
     @Reference(timeout = 50000,check = false)
     private IAgentFaced iAgentFaced;
 
-    @EnableTrace(name = "保存客户经理",place = "agent/save",system = "study-trace-dubbo",type = "save")
+    @EnableTrace(name = "保存客户经理",place = "agent",system = "study-trace-dubbo",type = "save")
     @PostMapping(value = Urls.V1.Agent.SAVE)
     public void save(@RequestBody AgentDto agentDto){
         iAgentFaced.save(agentDto);

@@ -15,13 +15,13 @@ public class ChannelController {
     @Reference(timeout = 50000,check = false)
     private IChannelFaced iChannelFaced;
 
-    @EnableTrace(name = "保存渠道",place = "channel/save",system = "study-trace-dubbo",type = "save")
+    @EnableTrace(name = "保存渠道",place = "channel",system = "study-trace-dubbo",type = "save")
     @PostMapping(value = Urls.V1.Channel.SAVE)
     public void save(@RequestBody ChannelDto channelDto){
         iChannelFaced.save(channelDto);
     }
 
-    @EnableTrace(name = "保存客户经理",place = "channel/disable",system = "study-trace-dubbo",type = "update")
+    @EnableTrace(name = "保存客户经理",place = "channel",system = "study-trace-dubbo",type = "update")
     @PostMapping(value = Urls.V1.Channel.DISABLE)
     public void disable(@PathVariable Long id){
         iChannelFaced.disable(id);
